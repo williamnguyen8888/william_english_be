@@ -1,0 +1,3 @@
+"""
+CRUD tests module initialization.
+"""

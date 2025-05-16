@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "william-english-be"
+version = "0.1.0"
+description = "FastAPI backend project"
+authors = ["william <williamnguyen8888@gmail.com>"]
+readme = "README.md"
+packages = [{include = "william_english_be", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.12"
+uvicorn = {extras = ["standard"], version = "^0.34.2"}
+sqlalchemy = "==2.*"
+pydantic = {extras = ["dotenv", "email"], version = "^2.11.4"}
+python-jose = {extras = ["cryptography"], version = "^3.4.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+alembic = "^1.15.2"
+mysqlclient = "^2.2.7"
+celery = {extras = ["redis"], version = "^5.5.2"}
+gunicorn = "^23.0.0"
+python-multipart = "^0.0.20"
+email-validator = "^2.2.0"
+structlog = "^25.3.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+httpx = "^0.28.1"
+flake8 = "^7.2.0"
+black = "^25.1.0"
+pylint = "^3.3.7"
+pytest-cov = "^6.1.1"
+faker = "^37.3.0"
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+# include = '\.pyi?$'
+# exclude = '''
+# /(
+#     \.eggs
+#   | \.git
+#   | \.hg
+#   | \.mypy_cache
+#   | \.tox
+#   | \.venv
+#   | _build
+#   | buck-out
+#   | build
+#   | dist
+#   | alembic/versions
+# )/
+# '''
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
